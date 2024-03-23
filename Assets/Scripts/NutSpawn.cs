@@ -60,8 +60,8 @@ public class NutSpawn : MonoBehaviour
         }
         return false; // No nut found at this spawn point
     }
-
-
+}
+/*
     public void Pickup()
     {
         // Hier kann die Logik für das Aufnehmen des Objekts implementiert werden
