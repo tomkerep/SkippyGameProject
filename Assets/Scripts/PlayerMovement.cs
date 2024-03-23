@@ -43,13 +43,14 @@ public class PlayerMovement : MonoBehaviour
             if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity))
             {
             
-                PickableItem pickable = hit.collider.GetComponent<PickableItem>(); // PickableItem ist nur ein Platzhalter, ersetzen durch den Namen des Skripts, das die PickUp-Funktion enthält
+               /* PickableItem pickable = hit.collider.GetComponent<PickableItem>(); // PickableItem ist nur ein Platzhalter, ersetzen durch den Namen des Skripts, das die PickUp-Funktion enthält
                 if (pickable != null)
                 {
                     pickable.Pickup();
-                }
+                }*/
             }
         }
 
 
+    }
 }
