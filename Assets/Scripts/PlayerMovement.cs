@@ -1,10 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float MoveSpeed = 5f;
+    public int maxNuts = 4;
+    private int currentNuts = 0;
+    public Transform nest;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,9 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         MovePlayer();
+        CheckForPickup();
+        CheckForDrop();
+        CheckForEnemyCollision();
     }
 
     private void MovePlayer()
@@ -34,7 +38,6 @@ public class PlayerMovement : MonoBehaviour
 
         this.transform.position += new Vector3(horizontalMovement, 0f, verticalMovement) * MoveSpeed * Time.deltaTime;
     }
-
     private void CheckForPickup()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -50,7 +53,30 @@ public class PlayerMovement : MonoBehaviour
                 }*/
             }
         }
-
-
     }
+    private void CheckForDrop()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            if (currentNuts > 0)
+            {
+                currentNuts--;
+                //Instantiate(nutPrefab, transform.position, Quaternion.identity);
+            }
+        }
+    }
+    private void CheckForEnemyCollision()
+    {
+        // Check if the player has collided with an enemy
+        // If so, reset the player's position to the nest
+
+        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, Mathf.Infinity))
+        {
+            EnemyMovement enemy = hit.collider.GetComponent<EnemyMovement>();
+            if (enemy != null)
+            {
+                transform.position = nest.position;
+            }
+        }
+    }   
 }
