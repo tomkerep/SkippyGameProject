@@ -5,12 +5,12 @@ using UnityEngine;
 public class NutSpawn : MonoBehaviour
 {
 
- public GameObject nussPrefab;
+public GameObject nussPrefab;
     public Transform[] spawnPoints;
     public float spawnInterval = 2f; // Adjust as needed
 
-   private bool isSpawning = false; // Flag to prevent multiple coroutines
-
+    private bool isSpawning = false; // Flag to prevent multiple coroutines
+   
     private void Start()
     {
         // Start spawning bullets after a delay
