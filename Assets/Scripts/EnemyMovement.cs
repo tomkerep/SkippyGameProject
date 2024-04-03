@@ -15,10 +15,18 @@ public class EnemyMovement : MonoBehaviour
     private bool isChasing = false; // Flag to indicate if NPC is currently chasing the player
     private float chaseTimer = 0f; // Timer for chase duration
 
+    public UnityEngine.AI.NavMeshAgent agent; 
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform; // Find the player's transform
+        agent.updateRotation = false; // Disable rotation update
     }
+
+    void DrawPath(Vector3 start, Vector3 end, Color color)
+{
+    Debug.DrawLine(start, end, color);
+}
 
     void Update()
     {
@@ -36,6 +44,15 @@ public class EnemyMovement : MonoBehaviour
         {
             Chase();
         }
+
+        if (agent.path != null)
+    {
+        Vector3[] corners = agent.path.corners;
+        for (int i = 0; i < corners.Length - 1; i++)
+        {
+            DrawPath(corners[i], corners[i + 1], Color.red);
+        }
+    }
     }
 
     void Patrol()
@@ -84,7 +101,7 @@ public class EnemyMovement : MonoBehaviour
         }
 
         // Move NPC towards the player
-        transform.position = Vector3.MoveTowards(transform.position, player.position, chaseSpeed * Time.deltaTime);
+        agent.transform.position = Vector3.MoveTowards(transform.position, player.position, chaseSpeed * Time.deltaTime);
 
         // Update chase timer
         chaseTimer += Time.deltaTime;
@@ -110,14 +127,23 @@ IEnumerator ReturnToPatrol()
 {
     yield return new WaitForSeconds(1f); // Warte eine kurze Zeit, bevor der Gegner zur Patrouille zurückkehrt (optional)
     
+    // Stop the NavMeshAgent to clear any existing path
+    agent.isStopped = false;
+    agent.ResetPath();
+    
+
     // Bewege den Gegner zum nächsten Wegpunkt in der Patrouille
     while (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) > 0.1f)
     {
-        transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, patrolSpeed * Time.deltaTime);
+       // Set the destination of the NavMeshAgent to the next waypoint in the patrol
+    agent.SetDestination(waypoints[currentWaypointIndex].position);
+    
         yield return null;
     }
 
     // Setze den Index des aktuellen Wegpunkts auf den nächsten Wegpunkt in der Patrouille
     currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
+
+    Patrol();
 }
 }
