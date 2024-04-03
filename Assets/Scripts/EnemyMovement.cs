@@ -15,7 +15,7 @@ public class EnemyMovement : MonoBehaviour
     private bool isChasing = false; // Flag to indicate if NPC is currently chasing the player
     private float chaseTimer = 0f; // Timer for chase duration
 
-    public UnityEngine.AI.NavMeshAgent agent; 
+    public UnityEngine.AI.NavMeshAgent agent;
 
     void Start()
     {
@@ -24,9 +24,9 @@ public class EnemyMovement : MonoBehaviour
     }
 
     void DrawPath(Vector3 start, Vector3 end, Color color)
-{
-    Debug.DrawLine(start, end, color);
-}
+    {
+        Debug.DrawLine(start, end, color);
+    }
 
     void Update()
     {
@@ -46,55 +46,55 @@ public class EnemyMovement : MonoBehaviour
         }
 
         if (agent.path != null)
-    {
-        Vector3[] corners = agent.path.corners;
-        for (int i = 0; i < corners.Length - 1; i++)
         {
-            DrawPath(corners[i], corners[i + 1], Color.red);
+            Vector3[] corners = agent.path.corners;
+            for (int i = 0; i < corners.Length - 1; i++)
+            {
+                DrawPath(corners[i], corners[i + 1], Color.red);
+            }
         }
-    }
     }
 
     void Patrol()
-{
-    // Berechne die Richtung zum aktuellen Wegpunkt
-    Vector3 direction = waypoints[currentWaypointIndex].position - transform.position;
-    direction.y = 0f; // Ignoriere die Höhenunterschiede
-
-    // Überprüfe, ob ein Hindernis den Weg des Gegners blockiert
-    if (Physics.Raycast(transform.position, direction, out RaycastHit hit, direction.magnitude))
     {
-        // Wenn ein Hindernis erkannt wird, ändere die Richtung des Gegners nicht
-        if (!hit.collider.CompareTag("Player")) // Ignoriere den Spieler, damit der Gegner den Spieler verfolgen kann, wenn er in Sichtweite ist
+        // Berechne die Richtung zum aktuellen Wegpunkt
+        Vector3 direction = waypoints[currentWaypointIndex].position - transform.position;
+        direction.y = 0f; // Ignoriere die Höhenunterschiede
+
+        // Überprüfe, ob ein Hindernis den Weg des Gegners blockiert
+        if (Physics.Raycast(transform.position, direction, out RaycastHit hit, direction.magnitude))
         {
-            // Debug.Log("Obstacle detected. Changing direction.");
-            return;
+            // Wenn ein Hindernis erkannt wird, ändere die Richtung des Gegners nicht
+            if (!hit.collider.CompareTag("Player")) // Ignoriere den Spieler, damit der Gegner den Spieler verfolgen kann, wenn er in Sichtweite ist
+            {
+                // Debug.Log("Obstacle detected. Changing direction.");
+                return;
+            }
+        }
+
+        // Bewege den NPC in Richtung des aktuellen Wegpunkts
+        transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, patrolSpeed * Time.deltaTime);
+
+        // Überprüfe, ob der NPC den aktuellen Wegpunkt erreicht hat
+        if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) < 0.1f)
+        {
+            // Bewege den NPC zum nächsten Wegpunkt
+            currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
+        }
+
+        // Überprüfe, ob der Spieler innerhalb des Verfolgungsradius ist
+        if (Vector3.Distance(transform.position, player.position) < chaseRadius)
+        {
+            StartChase();
         }
     }
-
-    // Bewege den NPC in Richtung des aktuellen Wegpunkts
-    transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, patrolSpeed * Time.deltaTime);
-
-    // Überprüfe, ob der NPC den aktuellen Wegpunkt erreicht hat
-    if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) < 0.1f)
-    {
-        // Bewege den NPC zum nächsten Wegpunkt
-        currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
-    }
-
-    // Überprüfe, ob der Spieler innerhalb des Verfolgungsradius ist
-    if (Vector3.Distance(transform.position, player.position) < chaseRadius)
-    {
-        StartChase();
-    }
-}
 
     void Chase()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
         // Check if player is out of chase radius
-        if(distanceToPlayer > chaseRadius)
+        if (distanceToPlayer > chaseRadius)
         {
             EndChase();
             return;
@@ -118,32 +118,32 @@ public class EnemyMovement : MonoBehaviour
     }
 
     void EndChase()
-{
-    isChasing = false;
-    StartCoroutine(ReturnToPatrol());
-}
-
-IEnumerator ReturnToPatrol()
-{
-    yield return new WaitForSeconds(1f); // Warte eine kurze Zeit, bevor der Gegner zur Patrouille zurückkehrt (optional)
-    
-    // Stop the NavMeshAgent to clear any existing path
-    agent.isStopped = false;
-    agent.ResetPath();
-    
-
-    // Bewege den Gegner zum nächsten Wegpunkt in der Patrouille
-    while (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) > 0.1f)
     {
-       // Set the destination of the NavMeshAgent to the next waypoint in the patrol
-    agent.SetDestination(waypoints[currentWaypointIndex].position);
-    
-        yield return null;
+        isChasing = false;
+        StartCoroutine(ReturnToPatrol());
     }
 
-    // Setze den Index des aktuellen Wegpunkts auf den nächsten Wegpunkt in der Patrouille
-    currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
+    IEnumerator ReturnToPatrol()
+    {
+        yield return new WaitForSeconds(1f); // Warte eine kurze Zeit, bevor der Gegner zur Patrouille zurückkehrt (optional)
 
-    Patrol();
-}
+        // Stop the NavMeshAgent to clear any existing path
+        agent.isStopped = false;
+        agent.ResetPath();
+
+
+        // Bewege den Gegner zum nächsten Wegpunkt in der Patrouille
+        while (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) > 0.1f)
+        {
+            // Set the destination of the NavMeshAgent to the next waypoint in the patrol
+            agent.SetDestination(waypoints[currentWaypointIndex].position);
+
+            yield return null;
+        }
+
+        // Setze den Index des aktuellen Wegpunkts auf den nächsten Wegpunkt in der Patrouille
+        currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
+
+        Patrol();
+    }
 }
