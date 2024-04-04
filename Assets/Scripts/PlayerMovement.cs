@@ -3,8 +3,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float MoveSpeed = 5f;
-    public int maxNuts = 4;
-    private int currentNuts = 0;
+    //public int maxNuts = 4;
+   //private int currentNuts = 0;
     public Transform bau;
     private Inventory playerInventory;
 
@@ -16,8 +16,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         MovePlayer();
-        CheckForPickup();
-        CheckForDrop();
+        //CheckForPickup();
+        //CheckForDrop();
         //CheckForEnemyCollision();
     }
 
@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
         this.transform.position += new Vector3(horizontalMovement, 0f, verticalMovement) * MoveSpeed * Time.deltaTime;
     }
 
-    private void CheckForPickup()
+    /*private void CheckForPickup()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -82,6 +82,6 @@ public class PlayerMovement : MonoBehaviour
     }*/
 }
 
-internal class PickableNut
+/*internal class PickableNut
 {
-}
+}*/

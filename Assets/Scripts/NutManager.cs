@@ -19,7 +19,7 @@ public class NutManager : MonoBehaviour
     void Update()
     {
 
-        nutText.text = nutCount.ToString() + "/4";
+//        nutText.text = nutCount.ToString() + "/4";
         
     }
 }
