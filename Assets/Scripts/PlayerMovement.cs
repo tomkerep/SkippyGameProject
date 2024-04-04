@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
         MovePlayer();
         CheckForPickup();
         CheckForDrop();
-        CheckForEnemyCollision();
+        //CheckForEnemyCollision();
     }
 
     private void MovePlayer()
@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-    private void CheckForEnemyCollision()
+  /*  private void CheckForEnemyCollision()
     {
         // Check if the player has collided with an enemy
         // If so, reset the player's position to the bau
@@ -76,10 +76,10 @@ public class PlayerMovement : MonoBehaviour
             EnemyMovement enemy = hit.collider.GetComponent<EnemyMovement>();
             if (enemy != null)
             {
-                transform.position = bau.position;
+              //  transform.position = bau.position;
             }
         }
-    }
+    }*/
 }
 
 internal class PickableNut
