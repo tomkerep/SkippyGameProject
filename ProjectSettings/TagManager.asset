@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Nut
   - Bau
+  - Enemy
   layers:
   - Default
   - TransparentFX
