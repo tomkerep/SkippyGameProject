@@ -527,8 +527,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89f8131e621f845828472ca30b067593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onKeyPickedUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 519101888}
+        m_TargetAssemblyTypeName: Door, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
+  door: {fileID: 1137572954}
   player: {fileID: 517473320}
-  door: {fileID: 519101885}
   pickupDistance: 0.5
 --- !u!212 &188552356
 SpriteRenderer:
@@ -591,7 +606,7 @@ Transform:
   m_GameObject: {fileID: 188552354}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 3.95, y: 0, z: -3.19}
+  m_LocalPosition: {x: 3.95, y: -0.33, z: -3.19}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -937,7 +952,7 @@ Transform:
   m_GameObject: {fileID: 519101885}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 5.63, y: -0, z: -1.16}
+  m_LocalPosition: {x: 8.14, y: -0.32, z: 2.87}
   m_LocalScale: {x: 4, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -955,9 +970,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1957d4c048e26433586295a850a06ef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: {fileID: 0}
-  doorClosed: {fileID: 0}
-  doorOpen: {fileID: 0}
+  doorClosed: {fileID: 519101885}
+  doorOpened: {fileID: 1137572954}
+  openDistance: 2
 --- !u!1 &606608655
 GameObject:
   m_ObjectHideFlags: 0
@@ -1531,6 +1546,7 @@ GameObject:
   - component: {fileID: 785900997}
   - component: {fileID: 785900996}
   - component: {fileID: 785900998}
+  - component: {fileID: 785900999}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Untagged
@@ -1569,10 +1585,10 @@ MonoBehaviour:
   - {fileID: 174609250}
   - {fileID: 2079937902}
   patrolSpeed: 1
-  chaseSpeed: 5
-  chaseRadius: 5
+  chaseSpeed: 4
+  chaseRadius: 2
   chaseDuration: 2
-  agent: {fileID: 0}
+  agent: {fileID: 785900999}
 --- !u!65 &785900997
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1646,6 +1662,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!195 &785900999
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785900994}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.5000001
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &787919613
 GameObject:
   m_ObjectHideFlags: 0
@@ -2574,7 +2612,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1137572956}
   - component: {fileID: 1137572955}
-  - component: {fileID: 1137572957}
   m_Layer: 0
   m_Name: doorOpened
   m_TagString: Untagged
@@ -2643,27 +2680,12 @@ Transform:
   m_GameObject: {fileID: 1137572954}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 3.74, y: -0, z: -0.24}
+  m_LocalPosition: {x: 6.2500005, y: -0.32, z: 3.7899997}
   m_LocalScale: {x: 2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
---- !u!114 &1137572957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1137572954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1957d4c048e26433586295a850a06ef4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  key: {fileID: 0}
-  doorClosed: {fileID: 0}
-  doorOpen: {fileID: 0}
 --- !u!1 &1143326767
 GameObject:
   m_ObjectHideFlags: 0
@@ -4167,11 +4189,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1358380952529551758, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.41
+      value: 6.52
       objectReference: {fileID: 0}
     - target: {fileID: 1358380952529551758, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 1358380952529551758, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4219,13 +4241,38 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1358380952529551758, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2129004968}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8078750219784172525, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1849480695}
   m_SourcePrefab: {fileID: 100100000, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
 --- !u!4 &1849480689 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1358380952529551758, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
   m_PrefabInstance: {fileID: 1849480688}
   m_PrefabAsset: {fileID: 0}
+--- !u!195 &1849480695
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517473320}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &1849669082
 GameObject:
   m_ObjectHideFlags: 0
@@ -4590,6 +4637,6 @@ SceneRoots:
   - {fileID: 1849669083}
   - {fileID: 1849480688}
   - {fileID: 1805699840}
-  - {fileID: 519101887}
   - {fileID: 1137572956}
   - {fileID: 188552357}
+  - {fileID: 519101887}
