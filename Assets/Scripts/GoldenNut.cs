@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Nut_new : MonoBehaviour
+public class GoldenNut : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
@@ -18,16 +18,9 @@ public class Nut_new : MonoBehaviour
             }else
             {
                 playerInventory.NutCollected();
+                playerInventory.NutCollected();
                 gameObject.SetActive(false);
-
-                StartCaroutine(Respawn(collision,5));
             }
         }
-    }
-
-    IEmunerator Respawn(Collision collision, int time)
-    {
-        yield return new WaitForSeconds(delay);
-        gameObject.SetActive(true);
     }
 }

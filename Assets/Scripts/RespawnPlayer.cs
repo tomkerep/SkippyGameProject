@@ -6,25 +6,21 @@ public class NewBehaviourScript : MonoBehaviour
 {
 
     public GameObject Player;
+    public GameObject NutText;
     public Transform respawnPoint;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnCollisionEnter(Collision other)
     {
+        PlayerInventory playerInventory = other.gameObject.GetComponent<PlayerInventory>();
+        InventoryUI inventory = NutText.GetComponent<InventoryUI>();
+
         if (other.gameObject.CompareTag("Player"))
         {
+            playerInventory.NumberOfNuts = 0;
             Player.transform.position = respawnPoint.position;
+
+            inventory.UpdateNutText(playerInventory); 
+            
         }
     }
 }

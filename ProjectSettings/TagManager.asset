@@ -7,6 +7,9 @@ TagManager:
   - Nut
   - Bau
   - Slider
+  - NutText
+  - Enemy
+  - GoldenNuz
   layers:
   - Default
   - TransparentFX
