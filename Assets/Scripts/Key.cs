@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Key : MonoBehaviour
 {
-    public GameObject player;
-    public GameObject door;
+    public UnityEvent onKeyPickedUp; // Ereignis, das ausgelöst wird, wenn der Schlüssel aufgenommen wird
+
+    public GameObject door; // Referenz auf das Door-Skript
+
+    public GameObject player; // Referenz auf das Player-Spielobjekt
     public float pickupDistance = 2f; // Die maximale Entfernung, in der der Spieler den Schlüssel aufnehmen kann
 
     private bool isPickedUp = false;
@@ -16,7 +20,6 @@ public class Key : MonoBehaviour
         if (!isPickedUp && Vector3.Distance(transform.position, player.transform.position) <= pickupDistance)
         {
             PickUpKey();
-            OpenDoor();
         }
     }
 
@@ -27,18 +30,9 @@ public class Key : MonoBehaviour
 
         // Beispiel: Deaktiviere das GameObject
         gameObject.SetActive(false);
-
-        // Setze den Status "isPickedUp" auf true, um zu verhindern, dass der Schlüssel mehrmals aufgehoben wird
         isPickedUp = true;
-    }
 
-    void OpenDoor()
-    {
-        // Überprüfe, ob die Tür existiert und öffne sie, wenn ja
-        if (door != null)
-        {
-            door.SetActive(false); // Deaktiviere die Tür zu
-            // Hier kannst du weitere Logik einfügen, um die Tür offen anzuzeigen
-        }
+        // Auslösen des Ereignisses, dass der Schlüssel aufgenommen wurde
+        onKeyPickedUp.Invoke();
     }
 }
