@@ -8,7 +8,7 @@ public class timer2 : MonoBehaviour
     public float timeRemaining = 10;
     public bool timerIsRunning = false;
 
-    public int NutsNeeded = 7;
+    public int NutsNeeded;
 
     public GameOverScreen gameOverScreen;
 
