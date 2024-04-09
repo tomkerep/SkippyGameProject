@@ -726,9 +726,9 @@ MonoBehaviour:
   - {fileID: 790663316}
   - {fileID: 1623450233}
   - {fileID: 831202781}
-  patrolSpeed: 1
-  chaseSpeed: 4
-  chaseRadius: 2
+  patrolSpeed: 2
+  chaseSpeed: 5
+  chaseRadius: 3
   chaseDuration: 1
   agent: {fileID: 109409727}
 --- !u!65 &109409729
