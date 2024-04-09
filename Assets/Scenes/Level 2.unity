@@ -5149,9 +5149,9 @@ MonoBehaviour:
   waypoints:
   - {fileID: 1883092430}
   - {fileID: 1652477600}
-  patrolSpeed: 1
-  chaseSpeed: 4
-  chaseRadius: 2
+  patrolSpeed: 2
+  chaseSpeed: 5
+  chaseRadius: 3
   chaseDuration: 1
   agent: {fileID: 1164596072}
 --- !u!65 &1164596074
