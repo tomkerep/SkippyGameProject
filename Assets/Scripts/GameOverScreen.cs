@@ -16,7 +16,10 @@ public class GameOverScreen : MonoBehaviour
 
     public void RestartButton()
     {
-        SceneManager.LoadScene("Overlay Levels");
+        string currentSceneName = SceneManager.GetActiveScene().name;
+
+        // Load the current scene by its name
+        SceneManager.LoadScene(currentSceneName);
     }
 
     public void ExitButton()

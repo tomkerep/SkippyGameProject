@@ -13,6 +13,10 @@ public class GameWonScreen : MonoBehaviour
         pointsText.text = score.ToString() + " Nüsse gesammelt";
     }
 
+public void NextLevel()
+{
+    SceneManager.LoadScene("Level 2");
+}
     
 
     public void ExitButton()
