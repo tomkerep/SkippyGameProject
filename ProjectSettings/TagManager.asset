@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Nut
+  - Bau
+  - Slider
+  - NutText
+  - Enemy
+  - GoldenNuz
+  - ClosedDoor
+  - OpenDoor
   layers:
   - Default
   - TransparentFX
