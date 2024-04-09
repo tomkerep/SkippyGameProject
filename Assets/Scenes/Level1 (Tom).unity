@@ -507,7 +507,7 @@ GameObject:
   m_Component:
   - component: {fileID: 188552357}
   - component: {fileID: 188552356}
-  - component: {fileID: 188552355}
+  - component: {fileID: 188552358}
   m_Layer: 0
   m_Name: "Schl\xFCssel"
   m_TagString: Untagged
@@ -515,36 +515,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &188552355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 188552354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89f8131e621f845828472ca30b067593, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onKeyPickedUp:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 519101888}
-        m_TargetAssemblyTypeName: Door, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 0
-  door: {fileID: 1137572954}
-  player: {fileID: 517473320}
-  pickupDistance: 0.5
 --- !u!212 &188552356
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -612,6 +582,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &188552358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188552354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89f8131e621f845828472ca30b067593, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupRadius: 0.5
+  closedDoorSprite: {fileID: 519101885}
+  openDoorSprite: {fileID: 1137572954}
+  blockingObject: {fileID: 0}
 --- !u!1 &221300422
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,10 +869,9 @@ GameObject:
   m_Component:
   - component: {fileID: 519101887}
   - component: {fileID: 519101886}
-  - component: {fileID: 519101888}
   m_Layer: 0
-  m_Name: doorClosed
-  m_TagString: Untagged
+  m_Name: ClosedDoor
+  m_TagString: ClosedDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -958,21 +943,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &519101888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519101885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1957d4c048e26433586295a850a06ef4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doorClosed: {fileID: 519101885}
-  doorOpened: {fileID: 1137572954}
-  openDistance: 2
 --- !u!1 &606608655
 GameObject:
   m_ObjectHideFlags: 0
@@ -2613,8 +2583,8 @@ GameObject:
   - component: {fileID: 1137572956}
   - component: {fileID: 1137572955}
   m_Layer: 0
-  m_Name: doorOpened
-  m_TagString: Untagged
+  m_Name: OpenDoor
+  m_TagString: OpenDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4226,6 +4196,10 @@ PrefabInstance:
     - target: {fileID: 1358380952529551758, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1990613434963860170, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
+      propertyPath: m_Constraints
+      value: 116
       objectReference: {fileID: 0}
     - target: {fileID: 8078750219784172525, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
       propertyPath: m_Name
