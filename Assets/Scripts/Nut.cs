@@ -5,9 +5,13 @@ using UnityEngine;
 
 public class Nut_new : MonoBehaviour
 {
+
+    public int time;
+    
     private void OnTriggerEnter(Collider other)
     {
         PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
+        NutSpawn nutspawn = GetComponent<NutSpawn>();
 
         if(playerInventory != null)
         {
@@ -19,15 +23,13 @@ public class Nut_new : MonoBehaviour
             {
                 playerInventory.NutCollected();
                 gameObject.SetActive(false);
-
-                StartCaroutine(Respawn(collision,5));
+                Invoke("wakeup", time);
             }
         }
     }
 
-    IEmunerator Respawn(Collision collision, int time)
+    void wakeup()
     {
-        yield return new WaitForSeconds(delay);
         gameObject.SetActive(true);
     }
 }
