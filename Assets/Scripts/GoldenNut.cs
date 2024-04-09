@@ -3,15 +3,11 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Nut_new : MonoBehaviour
+public class GoldenNut : MonoBehaviour
 {
-
-    public int time;
-    
     private void OnTriggerEnter(Collider other)
     {
         PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
-        NutSpawn nutspawn = GetComponent<NutSpawn>();
 
         if(playerInventory != null)
         {
@@ -22,14 +18,9 @@ public class Nut_new : MonoBehaviour
             }else
             {
                 playerInventory.NutCollected();
+                playerInventory.NutCollected();
                 gameObject.SetActive(false);
-                Invoke("wakeup", time);
             }
         }
-    }
-
-    void wakeup()
-    {
-        gameObject.SetActive(true);
     }
 }
