@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 public class GameOverScreen : MonoBehaviour
 {
     public TextMeshProUGUI pointsText;
+
+    public GameObject Slider;
     public void Setup(int score)
     {
         gameObject.SetActive(true);
@@ -18,8 +20,12 @@ public class GameOverScreen : MonoBehaviour
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
 
+        GameManager timer = Slider.GetComponent<GameManager>();
+        timer.ResetSlider();
+
         // Load the current scene by its name
         SceneManager.LoadScene(currentSceneName);
+
     }
 
     public void ExitButton()

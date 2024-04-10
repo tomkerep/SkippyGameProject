@@ -4800,15 +4800,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c53554f730b8e4c82983511e5699172b, type: 2}
     - target: {fileID: 1358380952529551758, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1358380952529551758, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1358380952529551758, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.12
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1358380952529551758, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4852,7 +4852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1358380952529551758, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8078750219784172525, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
       propertyPath: m_Name
@@ -4862,7 +4862,8 @@ PrefabInstance:
       propertyPath: bau
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2563432089731279329, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -4989,7 +4990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeRemaining: 120
   timerIsRunning: 0
-  NutsNeeded: 20
+  NutsNeeded: 15
   gameOverScreen: {fileID: 1777798473}
   gameWonScreen: {fileID: 184935763}
   Bau: {fileID: 94083659}
@@ -7316,7 +7317,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "0/20\n N\xFCsse im Bau"
+  m_text: "0/15\n N\xFCsse im Bau"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8309,8 +8310,8 @@ Transform:
   m_GameObject: {fileID: 1451073512}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 2.46, y: -8.68968, z: -2.496}
-  m_LocalScale: {x: 8.018029, y: 0.9000002, z: 1}
+  m_LocalPosition: {x: 2.46, y: -8.68968, z: -2.7319}
+  m_LocalScale: {x: 7.5457673, y: 0.9000002, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 444029615}
