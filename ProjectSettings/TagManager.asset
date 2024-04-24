@@ -12,6 +12,7 @@ TagManager:
   - GoldenNuz
   - ClosedDoor
   - OpenDoor
+  - BauText
   layers:
   - Default
   - TransparentFX
