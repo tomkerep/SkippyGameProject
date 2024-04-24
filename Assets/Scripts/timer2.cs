@@ -9,6 +9,8 @@ public class timer2 : MonoBehaviour
     public bool timerIsRunning = false;
 
     public int NutsNeeded;
+    public int NutsNeededStar2;
+    public int NutsNeededStar3;
 
     public GameOverScreen gameOverScreen;
 

@@ -6,6 +6,8 @@ using UnityEngine.Events;
 public class BauInventory : MonoBehaviour
 {
     public GameObject NutText;
+    public GameObject BauText;
+
     public int StoredNuts {get; set;}
     
     public UnityEvent<BauInventory> OnNutsStored; 
@@ -14,20 +16,24 @@ public class BauInventory : MonoBehaviour
     {
         PlayerInventory playerInventory = other.gameObject.GetComponent<PlayerInventory>();
         InventoryUI inventoryUI = NutText.GetComponent<InventoryUI>();
-
+    
         if(playerInventory != null){
         placeNuts(playerInventory.NumberOfNuts);
         playerInventory.NumberOfNuts = 0;
         inventoryUI.UpdateNutText(playerInventory);
+        
         }
     }
 
     void placeNuts(int nutCount){
         
+        BauInventoryUI bauInventoryUI = BauText.GetComponent<BauInventoryUI>();
+
         StoredNuts += nutCount;
         OnNutsStored.Invoke(this);
-        Debug.LogWarning("Nüsse wurden abgelegt"+ StoredNuts);
- 
+        bauInventoryUI.UpdateStars(this);
+
+    
     }
 }
 

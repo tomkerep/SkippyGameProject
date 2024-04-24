@@ -7,14 +7,50 @@ public class GameManager : MonoBehaviour
 {
     Slider timeSlider;
     public float gameTime;
+
+
+    void Start()
+    {
+        timeSlider = GetComponent<Slider>();
+        timeSlider.maxValue = gameTime;
+       // timeSlider.value = gameTime;
+       ResetSlider();
+    }
+
+    void FixedUpdate()
+    {
+         float time = Mathf.Max(gameTime - Time.time, 0); // Ensures time doesn't go below 0
+
+          if (time <= 0)
+          {
+              ResetSlider();
+          }
+
+        timeSlider.value = time;
+    }
+
+    // Function to reset the slider
+    public void ResetSlider()
+    {
+        timeSlider.value = gameTime;
+      //  timeSlider.maxValue = gameTime;
+    }
+
+}
+
+/*
+public class GameManager : MonoBehaviour
+{
+    Slider timeSlider;
+    public float gameTime;
     
-    private bool stopTimer;
+   // private bool stopTimer;
 
     void Start(){
 
         timeSlider = GetComponent<Slider>();
 
-        stopTimer = false;
+      //  stopTimer = false;
         timeSlider.maxValue = gameTime;
         timeSlider.value = gameTime; 
     }
@@ -25,12 +61,13 @@ public class GameManager : MonoBehaviour
         float time = gameTime - Time.time;
 
         if(time <= 0){
-            stopTimer = true;
+           // stopTimer = true;
+           time = gameTime;
+        //    timeSlider.value = gameTime;
         }
 
-        if(stopTimer == false){
             timeSlider.value = time;
         }
     }
-}
 
+*/
