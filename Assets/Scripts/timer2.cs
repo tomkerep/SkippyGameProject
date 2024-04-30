@@ -68,7 +68,7 @@ public class timer2 : MonoBehaviour
         }
     }
 
-public void Pause()
+    public void Pause()
     {
         PausePanel.SetActive(true);
         Time.timeScale = 0;

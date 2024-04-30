@@ -15,6 +15,8 @@ public class GameWonScreen : MonoBehaviour
 
     public void NextLevel()
     {
+        //Slider zurücksetzen
+        FindObjectOfType<GameManager>().ResetSlider(); 
         //nächste Szene laden
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
