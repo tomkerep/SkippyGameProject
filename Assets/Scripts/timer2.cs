@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class timer2 : MonoBehaviour
 {
@@ -16,7 +16,8 @@ public class timer2 : MonoBehaviour
 
     public GameWonScreen gameWonScreen;
     public GameObject Bau;
-
+    public GameObject PausePanel;
+    private bool isPaused = false;
     private void Start()
     {
         // Starts the timer automatically
@@ -25,7 +26,6 @@ public class timer2 : MonoBehaviour
 
     void Update()
     {
-
         if (timerIsRunning)
         {
             if (timeRemaining > 0)
@@ -41,8 +41,19 @@ public class timer2 : MonoBehaviour
                 GameCheck();
             }
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                Debug.Log("Resume");
+                Resume();
+            }else{
+                Debug.Log("Pause");
+                Pause();
+            
+            }
+        }
     }
-
     public void GameCheck()
     {
         BauInventory bauInventory = Bau.GetComponent<BauInventory>();
@@ -57,5 +68,32 @@ public class timer2 : MonoBehaviour
         }
     }
 
-
+    public void Pause()
+    {
+        PausePanel.SetActive(true);
+        Time.timeScale = 0;
+        isPaused = true;
+    }
+    public void Resume()
+    {
+        PausePanel.SetActive(false);
+        Time.timeScale = 1;
+        isPaused = false;
+    }
+    public void QuitGame()
+    {
+        Debug.Log("QUIT!");
+        if (Application.isEditor)
+        {
+            UnityEditor.EditorApplication.isPlaying = false;
+        }
+        else
+        {
+            Application.Quit();
+        }
+    }
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene("Hauptmenü");
+    }
 }

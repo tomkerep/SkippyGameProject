@@ -33,6 +33,7 @@ public class BauInventory : MonoBehaviour
         OnNutsStored.Invoke(this);
         bauInventoryUI.UpdateStars(this);
 
+    
     }
 }
 
