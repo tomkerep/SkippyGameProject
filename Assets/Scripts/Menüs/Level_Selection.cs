@@ -5,16 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class Level_Selection : MonoBehaviour
 {
-    public void StartLevelOne()
+
+    public static int selectedLevel;
+    public int level;
+
+    public void OpenScene()
     {
-        SceneManager.LoadScene("Level 1");
+        selectedLevel = level;
+        SceneManager.LoadScene("start_level");
     }
-    public void StartLevelTwo()
-    {
-        SceneManager.LoadScene("Level 2");
-    }
-    public void StartLevelThree()
-    {
-        SceneManager.LoadScene("Level 3");
-    }
+    
 }

@@ -5301,7 +5301,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &742291220
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5345,7 +5345,6 @@ MonoBehaviour:
   gameOverScreen: {fileID: 1777798473}
   gameWonScreen: {fileID: 184935763}
   Bau: {fileID: 94083659}
-  PausePanel: {fileID: 742291219}
 --- !u!114 &742291222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7369,7 +7368,6 @@ MonoBehaviour:
   gameOverScreen: {fileID: 1777798473}
   gameWonScreen: {fileID: 184935763}
   Bau: {fileID: 94083659}
-  PausePanel: {fileID: 742291219}
 --- !u!114 &920002113
 MonoBehaviour:
   m_ObjectHideFlags: 0
