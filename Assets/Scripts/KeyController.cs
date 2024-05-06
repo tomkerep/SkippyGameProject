@@ -5,13 +5,13 @@ public class KeyController : MonoBehaviour
     public float pickupRadius = 3f; // Der Aufnahme-Radius für den Schlüssel
     public GameObject closedDoorSprite; // Das Sprite für die geschlossene Tür
     public GameObject openDoorSprite; // Das Sprite für die geöffnete Tür
-    public GameObject blockingObject; // Das 3D-Objekt, das den Weg blockiert
+    //public GameObject blockingObject; // Das 3D-Objekt, das den Weg blockiert
 
 
     private void Start()
     {
         openDoorSprite.SetActive(false);
-        blockingObject.SetActive(true);
+        //blockingObject.SetActive(true);
     }
     private void Update()
     {
@@ -51,6 +51,6 @@ public class KeyController : MonoBehaviour
         // Aktivieren/deaktivieren Sie die entsprechenden Objekte, um die Tür zu öffnen
         closedDoorSprite.SetActive(false);
         openDoorSprite.SetActive(true);
-        blockingObject.SetActive(false); // Deaktivieren Sie das blockierende 3D-Objekt
+        //blockingObject.SetActive(false); // Deaktivieren Sie das blockierende 3D-Objekt
     }
 }
