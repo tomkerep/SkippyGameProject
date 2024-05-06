@@ -9,7 +9,7 @@ public class BauInventoryUI : MonoBehaviour
 
     public GameObject GameManager;
 
-     public GameObject star1;
+    public GameObject star1;
     public GameObject star2;
     public GameObject star3;
 
