@@ -8,19 +8,21 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
 
 
+  private Rigidbody rb;
+
     void Start()
     {
-     //   playerInventory = GetComponent<Inventory>(); // Erhalten Sie das Inventar des Spielers
+        rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         MovePlayer();
     }
 
     private void MovePlayer()
     {
-        float horizontalMovement = 
+        float horizontalMovement =
             (Input.GetKey(KeyCode.D) ? 1f : 0f) +
             (Input.GetKey(KeyCode.RightArrow) ? 1f : 0f) +
             (Input.GetKey(KeyCode.A) ? -1f : 0f) +
@@ -32,8 +34,8 @@ public class PlayerMovement : MonoBehaviour
             (Input.GetKey(KeyCode.S) ? -1f : 0f) +
             (Input.GetKey(KeyCode.DownArrow) ? -1f : 0f);
 
-        this.transform.position += new Vector3(horizontalMovement, 0f, verticalMovement) * MoveSpeed * Time.deltaTime;
-    
+        Vector3 movement = new Vector3(horizontalMovement, 0f, verticalMovement).normalized * MoveSpeed * Time.deltaTime;
+        rb.MovePosition(transform.position + movement);
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             Debug.Log("rechts");
@@ -54,8 +56,6 @@ public class PlayerMovement : MonoBehaviour
         else if(Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S)){
             animator.SetBool("isMoving", true);
         }
-    
-      
     }
 
       /*  public void Flip(){

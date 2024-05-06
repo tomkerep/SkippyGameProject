@@ -6,34 +6,41 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     Slider timeSlider;
-    public float gameTime;
+    
 
+    public timer2 gameTimer; // Reference to your timer2 script
+
+    private bool levelStarted = false; // Flag to track if the level has started
 
     void Start()
     {
         timeSlider = GetComponent<Slider>();
-        timeSlider.maxValue = gameTime;
-       // timeSlider.value = gameTime;
-       ResetSlider();
+        timeSlider.maxValue = gameTimer.timeRemaining;
+        timeSlider.value = timeSlider.maxValue;
+    
     }
 
     void FixedUpdate()
     {
-         float time = Mathf.Max(gameTime - Time.time, 0); // Ensures time doesn't go below 0
-
-          if (time <= 0)
-          {
-              ResetSlider();
-          }
-
-        timeSlider.value = time;
+        // Only update slider if the level has started and the timer is running
+        if (levelStarted && gameTimer != null && gameTimer.timerIsRunning)
+        {
+            
+            timeSlider.value = Mathf.Max(gameTimer.timeRemaining, 0);
+        }
     }
 
     // Function to reset the slider
     public void ResetSlider()
     {
-        timeSlider.value = gameTime;
-      //  timeSlider.maxValue = gameTime;
+        timeSlider.value = timeSlider.maxValue;
+        
+    }
+
+    // Function to indicate that the level has started
+    public void StartLevel()
+    {
+        levelStarted = true;
     }
 
 }

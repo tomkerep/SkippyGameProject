@@ -133,10 +133,10 @@ public class EnemyMovement : MonoBehaviour
             float angle = Quaternion.Angle(transform.rotation, targetRotation);
 
             // Update animator parameter based on angle (assuming you have a parameter named "TurnAngle")
-            animator.SetFloat("TurnAngle", angle);
+            //animator.SetFloat("TurnAngle", angle);
 
             // Debug rotation angle and movement direction
-            Debug.Log("Rotation Angle: " + angle);
+           //Debug.Log("Rotation Angle: " + angle);
             Debug.Log("Movement Direction: " + movementDirection);
 
             if(movementDirection.x > 0)

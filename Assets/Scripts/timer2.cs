@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class timer2 : MonoBehaviour
 {
-    public float timeRemaining = 10;
+    public float timeRemaining = 0;
     public bool timerIsRunning = false;
 
     public int NutsNeeded;
@@ -20,8 +20,7 @@ public class timer2 : MonoBehaviour
     private bool isPaused = false;
     private void Start()
     {
-        // Starts the timer automatically
-        timerIsRunning = true;
+        
     }
 
     void Update()
@@ -31,6 +30,7 @@ public class timer2 : MonoBehaviour
             if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
+
             }
             else
             {
