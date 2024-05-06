@@ -17,7 +17,12 @@ public class EnemyMovement : MonoBehaviour
     private float chaseTimer = 0f;
     private float originalPatrolSpeed;
 
+    private Vector3 previousPosition;
+    private bool isMoving;
+
+
     public UnityEngine.AI.NavMeshAgent agent;
+    public Animator animator;
 
     void Start()
     {
@@ -25,6 +30,9 @@ public class EnemyMovement : MonoBehaviour
         agent.updateRotation = false;
 
         originalPatrolSpeed = patrolSpeed;
+
+        previousPosition = transform.position;
+
     }
 
     void Update()
@@ -43,7 +51,12 @@ public class EnemyMovement : MonoBehaviour
         {
             Chase();
         }
+
+    UpdateAnimation();
+       
     }
+
+   
 
     void Patrol()
     {
@@ -80,12 +93,14 @@ public class EnemyMovement : MonoBehaviour
     void StartChase()
     {
         isChasing = true;
+      animator.SetBool("isChasing", true);
         chaseTimer = 0f;
     }
 
     void EndChase()
     {
         isChasing = false;
+       animator.SetBool("isChasing", false);
         StartCoroutine(ReturnToPatrol());
     }
 
@@ -102,4 +117,42 @@ public class EnemyMovement : MonoBehaviour
 
         Patrol();
     }
+    
+    void UpdateAnimation()
+    {
+        Vector3 movementDirection = transform.position - previousPosition;
+        movementDirection.y = 0f; // Ignore vertical movement
+        isMoving = movementDirection.magnitude > 0.01f;
+
+        animator.SetBool("isMoving", isMoving);
+
+        if (isMoving)
+        {
+            // Calculate rotation angle from movement direction
+            Quaternion targetRotation = Quaternion.LookRotation(movementDirection);
+            float angle = Quaternion.Angle(transform.rotation, targetRotation);
+
+            // Update animator parameter based on angle (assuming you have a parameter named "TurnAngle")
+            animator.SetFloat("TurnAngle", angle);
+
+            // Debug rotation angle and movement direction
+            Debug.Log("Rotation Angle: " + angle);
+            Debug.Log("Movement Direction: " + movementDirection);
+
+            if(movementDirection.x > 0)
+            {
+                animator.SetBool("läuftRechts", true);
+            }
+            else
+            {
+                animator.SetBool("läuftRechts", false);
+            }
+           
+
+            // Update previous position
+            previousPosition = transform.position;
+        }
+    }
+
+
 }
