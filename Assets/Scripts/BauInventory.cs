@@ -7,6 +7,7 @@ public class BauInventory : MonoBehaviour
 {
     public GameObject NutText;
     public GameObject BauText;
+    public GameObject GameWonScreen;
 
     public int StoredNuts {get; set;}
     
@@ -28,10 +29,12 @@ public class BauInventory : MonoBehaviour
     void placeNuts(int nutCount){
         
         BauInventoryUI bauInventoryUI = BauText.GetComponent<BauInventoryUI>();
+        GameWonScreen gameWonScreen = GameWonScreen.GetComponent<GameWonScreen>();
 
         StoredNuts += nutCount;
         OnNutsStored.Invoke(this);
         bauInventoryUI.UpdateStars(this);
+        //gameWonScreen.UpdateStars(this);
 
     
     }
