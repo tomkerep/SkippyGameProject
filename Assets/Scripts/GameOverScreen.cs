@@ -9,7 +9,7 @@ public class GameOverScreen : MonoBehaviour
 {
     public TextMeshProUGUI pointsText;
 
-    public GameObject Slider;
+    public Slider slider;
     public void Setup(int score)
     {
         gameObject.SetActive(true);
@@ -20,8 +20,7 @@ public class GameOverScreen : MonoBehaviour
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
 
-        GameManager timer = Slider.GetComponent<GameManager>();
-        timer.ResetSlider();
+        slider.value = slider.maxValue;
 
         // Load the current scene by its name
         SceneManager.LoadScene(currentSceneName);

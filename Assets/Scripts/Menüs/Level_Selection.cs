@@ -12,7 +12,7 @@ public class Level_Selection : MonoBehaviour
     public void OpenScene()
     {
         selectedLevel = level;
-        SceneManager.LoadScene("start_level");
+        SceneManager.LoadScene("Level " + level.ToString());
     }
     
 }
