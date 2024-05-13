@@ -137,7 +137,7 @@ public class EnemyMovement : MonoBehaviour
 
             // Debug rotation angle and movement direction
            //Debug.Log("Rotation Angle: " + angle);
-            Debug.Log("Movement Direction: " + movementDirection);
+           // Debug.Log("Movement Direction: " + movementDirection);
 
             if(movementDirection.x > 0)
             {

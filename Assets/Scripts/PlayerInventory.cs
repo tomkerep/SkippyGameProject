@@ -9,6 +9,7 @@ public class PlayerInventory : MonoBehaviour
     public int MaxNumberOfNuts = 4;
     public UnityEvent<PlayerInventory> OnNutCollected; 
 
+
     public void NutCollected()
     {
         if(NumberOfNuts >= MaxNumberOfNuts)

@@ -108,4 +108,9 @@ public class timer2 : MonoBehaviour
     {
         SceneManager.LoadScene("Hauptmenü");
     }
+
+    public float GetRemainingTime()
+    {
+        return timeRemaining;
+    }
 }
