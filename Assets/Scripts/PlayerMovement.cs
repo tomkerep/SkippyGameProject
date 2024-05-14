@@ -38,14 +38,14 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(transform.position + movement);
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
-            Debug.Log("rechts");
+            // Debug.Log("rechts");
             animator.SetBool("isMoving", true);
             animator.SetBool("läuftRechts", true);
          //  Flip();
         }
         else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            Debug.Log("links");
+            // Debug.Log("links");
             animator.SetBool("isMoving", true);
             animator.SetBool("läuftRechts", false);
            // Flip();
