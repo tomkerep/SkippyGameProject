@@ -12,6 +12,7 @@ public class BauInventory : MonoBehaviour
     public int StoredNuts {get; set;}
     
     public UnityEvent<BauInventory> OnNutsStored; 
+    public AudioClip drop_nut;
 
     void OnTriggerEnter(Collider other)
     {
@@ -20,6 +21,8 @@ public class BauInventory : MonoBehaviour
     
         if(playerInventory != null){
         placeNuts(playerInventory.NumberOfNuts);
+        // Soundeffekt abspielen
+            AudioManager.instance.PlaySFX(drop_nut);
         playerInventory.NumberOfNuts = 0;
         inventoryUI.UpdateNutText(playerInventory);
         

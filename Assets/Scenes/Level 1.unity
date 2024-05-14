@@ -2570,6 +2570,7 @@ MonoBehaviour:
   Player: {fileID: 731347228}
   NutText: {fileID: 2048425179}
   respawnPoint: {fileID: 1953554439}
+  hit_sound: {fileID: 8300000, guid: 415a65eba889f4137b229026f1848213, type: 3}
 --- !u!114 &387979950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2586,6 +2587,7 @@ MonoBehaviour:
   OnNutCollected:
     m_PersistentCalls:
       m_Calls: []
+  collect_nut: {fileID: 0}
 --- !u!135 &387979951
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2759,6 +2761,7 @@ MonoBehaviour:
   star1: {fileID: 0}
   star2: {fileID: 0}
   star3: {fileID: 0}
+  win_sound: {fileID: 0}
 --- !u!1 &450392157
 GameObject:
   m_ObjectHideFlags: 0
@@ -3784,6 +3787,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointsText: {fileID: 1244172906}
   slider: {fileID: 678421932}
+  lose_sound: {fileID: 8300000, guid: 0aee1a1841971433882bf44615cde781, type: 3}
 --- !u!114 &562888546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5044,6 +5048,7 @@ MonoBehaviour:
   Player: {fileID: 731347228}
   NutText: {fileID: 2048425179}
   respawnPoint: {fileID: 1953554439}
+  hit_sound: {fileID: 8300000, guid: 415a65eba889f4137b229026f1848213, type: 3}
 --- !u!114 &627007422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5060,6 +5065,7 @@ MonoBehaviour:
   OnNutCollected:
     m_PersistentCalls:
       m_Calls: []
+  collect_nut: {fileID: 0}
 --- !u!135 &627007423
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6188,6 +6194,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  collect_nut: {fileID: 8300000, guid: ad0cdc262e50e46f794a527d28c4db1b, type: 3}
 --- !u!4 &731347253 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1358380952529551758, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
@@ -7551,6 +7558,7 @@ MonoBehaviour:
   gameWonScreen: {fileID: 2044574553}
   Bau: {fileID: 1953554438}
   PausePanel: {fileID: 949034901}
+  inGameMusic: {fileID: 0}
 --- !u!1 &974420439
 GameObject:
   m_ObjectHideFlags: 0
@@ -8271,6 +8279,7 @@ MonoBehaviour:
   Player: {fileID: 731347228}
   NutText: {fileID: 2048425179}
   respawnPoint: {fileID: 1953554439}
+  hit_sound: {fileID: 8300000, guid: 415a65eba889f4137b229026f1848213, type: 3}
 --- !u!114 &1039332260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8287,6 +8296,7 @@ MonoBehaviour:
   OnNutCollected:
     m_PersistentCalls:
       m_Calls: []
+  collect_nut: {fileID: 0}
 --- !u!135 &1039332261
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -11131,6 +11141,7 @@ MonoBehaviour:
   gameWonScreen: {fileID: 2044574553}
   Bau: {fileID: 1953554438}
   PausePanel: {fileID: 949034901}
+  inGameMusic: {fileID: 8300000, guid: f22aadaa1b92b444c872c4b6740adde1, type: 3}
 --- !u!1 &1317062498
 GameObject:
   m_ObjectHideFlags: 0
@@ -15212,6 +15223,11 @@ GameObject:
   - component: {fileID: 1943568160}
   - component: {fileID: 1943568159}
   - component: {fileID: 1943568158}
+  - component: {fileID: 1943568161}
+  - component: {fileID: 1943568164}
+  - component: {fileID: 1943568163}
+  - component: {fileID: 1943568162}
+  - component: {fileID: 1943568165}
   m_Layer: 0
   m_Name: AudioManger_1
   m_TagString: Untagged
@@ -15231,6 +15247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 427ad0991d5e049e69eaf809a559f1c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicSource: {fileID: 0}
+  sfxSource: {fileID: 0}
 --- !u!82 &1943568159
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15342,6 +15360,92 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1943568161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943568157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4af517f8c867c4392892369653d266a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxNumberOfNuts: 4
+  OnNutCollected:
+    m_PersistentCalls:
+      m_Calls: []
+  collect_nut: {fileID: 8300000, guid: ad0cdc262e50e46f794a527d28c4db1b, type: 3}
+--- !u!114 &1943568162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943568157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d5149504402f40b2aa6f1965e790515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsText: {fileID: 0}
+  GameManager: {fileID: 0}
+  Bau: {fileID: 0}
+  star1: {fileID: 0}
+  star2: {fileID: 0}
+  star3: {fileID: 0}
+  win_sound: {fileID: 8300000, guid: 4d417c9e8c38546ecae5b7bfb8167c63, type: 3}
+--- !u!114 &1943568163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943568157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e34fae067cf842d2adc628dc4237713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsText: {fileID: 0}
+  slider: {fileID: 0}
+  lose_sound: {fileID: 8300000, guid: 0aee1a1841971433882bf44615cde781, type: 3}
+--- !u!114 &1943568164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943568157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e14471404d8e4b918639e05dc5e32d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NutText: {fileID: 0}
+  BauText: {fileID: 0}
+  GameWonScreen: {fileID: 0}
+  OnNutsStored:
+    m_PersistentCalls:
+      m_Calls: []
+  drop_nut: {fileID: 8300000, guid: 843fc0aed8ddd44ea92b4e31a2dea8be, type: 3}
+--- !u!114 &1943568165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943568157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17314e27a85fa421cb93dd9389fead60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  NutText: {fileID: 0}
+  respawnPoint: {fileID: 0}
+  hit_sound: {fileID: 8300000, guid: 415a65eba889f4137b229026f1848213, type: 3}
 --- !u!1 &1945369057
 GameObject:
   m_ObjectHideFlags: 0
@@ -15491,6 +15595,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  drop_nut: {fileID: 8300000, guid: 843fc0aed8ddd44ea92b4e31a2dea8be, type: 3}
 --- !u!65 &1953554441
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16467,6 +16572,7 @@ MonoBehaviour:
   star1: {fileID: 0}
   star2: {fileID: 0}
   star3: {fileID: 0}
+  win_sound: {fileID: 8300000, guid: 4d417c9e8c38546ecae5b7bfb8167c63, type: 3}
 --- !u!114 &2044574554
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,9 +10,12 @@ public class GameOverScreen : MonoBehaviour
     public TextMeshProUGUI pointsText;
 
     public Slider slider;
+    public AudioClip lose_sound;
     public void Setup(int score)
     {
         gameObject.SetActive(true);
+        // Soundeffekt abspielen
+            AudioManager.instance.PlaySFX(lose_sound);
         pointsText.text = score.ToString() + " Nüsse gesammelt";
     }
 

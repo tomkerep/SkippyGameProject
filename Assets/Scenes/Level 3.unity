@@ -590,6 +590,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+  drop_nut: {fileID: 0}
 --- !u!212 &23995949
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1358,6 +1359,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  drop_nut: {fileID: 8300000, guid: 843fc0aed8ddd44ea92b4e31a2dea8be, type: 3}
 --- !u!65 &94083661
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1499,6 +1501,7 @@ MonoBehaviour:
   OnNutCollected:
     m_PersistentCalls:
       m_Calls: []
+  collect_nut: {fileID: 0}
 --- !u!114 &109409726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1514,6 +1517,7 @@ MonoBehaviour:
   Player: {fileID: 772419827}
   NutText: {fileID: 866452797}
   respawnPoint: {fileID: 94083664}
+  hit_sound: {fileID: 0}
 --- !u!195 &109409727
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2116,6 +2120,7 @@ MonoBehaviour:
   star1: {fileID: 0}
   star2: {fileID: 0}
   star3: {fileID: 0}
+  win_sound: {fileID: 8300000, guid: 4d417c9e8c38546ecae5b7bfb8167c63, type: 3}
 --- !u!114 &184935764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2390,6 +2395,7 @@ MonoBehaviour:
   OnNutCollected:
     m_PersistentCalls:
       m_Calls: []
+  collect_nut: {fileID: 0}
 --- !u!114 &286559984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2405,6 +2411,7 @@ MonoBehaviour:
   Player: {fileID: 772419827}
   NutText: {fileID: 866452797}
   respawnPoint: {fileID: 94083664}
+  hit_sound: {fileID: 8300000, guid: 415a65eba889f4137b229026f1848213, type: 3}
 --- !u!195 &286559985
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3191,6 +3198,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 427ad0991d5e049e69eaf809a559f1c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicSource: {fileID: 0}
+  sfxSource: {fileID: 0}
 --- !u!1 &379941609
 GameObject:
   m_ObjectHideFlags: 0
@@ -6318,6 +6327,7 @@ MonoBehaviour:
   gameWonScreen: {fileID: 184935763}
   Bau: {fileID: 94083659}
   PausePanel: {fileID: 0}
+  inGameMusic: {fileID: 0}
 --- !u!114 &742291222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6551,6 +6561,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+  drop_nut: {fileID: 0}
 --- !u!212 &762358749
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6658,6 +6669,7 @@ MonoBehaviour:
   OnNutCollected:
     m_PersistentCalls:
       m_Calls: []
+  collect_nut: {fileID: 0}
 --- !u!114 &772082581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6673,6 +6685,7 @@ MonoBehaviour:
   Player: {fileID: 772419827}
   NutText: {fileID: 866452797}
   respawnPoint: {fileID: 94083664}
+  hit_sound: {fileID: 8300000, guid: 415a65eba889f4137b229026f1848213, type: 3}
 --- !u!195 &772082582
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6822,6 +6835,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  collect_nut: {fileID: 8300000, guid: ad0cdc262e50e46f794a527d28c4db1b, type: 3}
 --- !u!195 &772419829
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -8691,6 +8705,7 @@ MonoBehaviour:
   gameWonScreen: {fileID: 184935763}
   Bau: {fileID: 94083659}
   PausePanel: {fileID: 742291219}
+  inGameMusic: {fileID: 8300000, guid: f22aadaa1b92b444c872c4b6740adde1, type: 3}
 --- !u!114 &920002113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9995,6 +10010,7 @@ MonoBehaviour:
   star1: {fileID: 0}
   star2: {fileID: 0}
   star3: {fileID: 0}
+  win_sound: {fileID: 0}
 --- !u!1 &1023367218
 GameObject:
   m_ObjectHideFlags: 0
@@ -11129,6 +11145,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+  drop_nut: {fileID: 8300000, guid: 843fc0aed8ddd44ea92b4e31a2dea8be, type: 3}
 --- !u!1 &1154729305
 GameObject:
   m_ObjectHideFlags: 0
@@ -11821,6 +11838,7 @@ MonoBehaviour:
   OnNutCollected:
     m_PersistentCalls:
       m_Calls: []
+  collect_nut: {fileID: 0}
 --- !u!114 &1216616265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11836,6 +11854,7 @@ MonoBehaviour:
   Player: {fileID: 772419827}
   NutText: {fileID: 866452797}
   respawnPoint: {fileID: 94083664}
+  hit_sound: {fileID: 8300000, guid: 415a65eba889f4137b229026f1848213, type: 3}
 --- !u!195 &1216616266
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -17335,6 +17354,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+  drop_nut: {fileID: 0}
 --- !u!212 &1696105227
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17450,6 +17470,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+  drop_nut: {fileID: 0}
 --- !u!212 &1724684294
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17822,6 +17843,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointsText: {fileID: 1458466235}
   slider: {fileID: 1253629616}
+  lose_sound: {fileID: 8300000, guid: 0aee1a1841971433882bf44615cde781, type: 3}
 --- !u!114 &1777798474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18540,6 +18562,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+  drop_nut: {fileID: 0}
 --- !u!212 &1908095451
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -3,7 +3,10 @@ guid: 30a8cc6cd63864808901a38c7f59b2f8
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - click: {fileID: 8300000, guid: 4e7391b4b67724ac0b705d2632dd5c96, type: 3}
+  - mainMenuMusic: {fileID: 8300000, guid: 7de68cb6a940f49b48233daa66a6f540, type: 3}
+  - inGameMusic: {fileID: 8300000, guid: f22aadaa1b92b444c872c4b6740adde1, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

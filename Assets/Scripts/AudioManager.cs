@@ -1,74 +1,57 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
-    //Versuch 1
-        // [Header("----Audio Sources----")]
-        // [SerializeField] AudioSource musicSource;
-        // [SerializeField] AudioSource sfxSource;
+    public static AudioManager instance;
+    public AudioSource musicSource;
+    public AudioSource sfxSource;
 
-        // [Header("----Audio Clips----")]
-        // public AudioClip backgroundMusic;
-        // public AudioClip pickUp;
-        // public AudioClip drop;
-        // public AudioClip hit;
-        // public AudioClip win;
-        // public AudioClip lose;
+    void Awake()
+    {
+        if (instance == null) // Wenn es noch keine Instanz von AudioManager gibt, erstelle eine
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
 
-        // public void start()
-        // {
-        //     musicSource.clip = backgroundMusic;
-        //     musicSource.Play();
-        // }
-    
-    //Versuch 2
+        // Initialisiere die AudioSources
+        musicSource = gameObject.AddComponent<AudioSource>();
+        sfxSource = gameObject.AddComponent<AudioSource>();
+    }
 
-        // public static AudioManager instance;
-        // public Sound[] music, sfxSounds;
-        // public AudioSource musicSource, sfxSource;
-
-        // private void Awake()
-        // {
-        //     if (instance == null)
-        //     {
-        //         instance = this;
-        //         DontDestroyOnLoad(gameObject);
-        //     }else
-        //     {
-        //         Destroy(gameObject);
-        //     }
-        // }
-
-        // public void PlayMusic(string name)
-        // {
-        //     Sound s = Array.Find(music, x => x.name == name);
-        //     if (s == null)
-        //     {
-        //         Debug.LogWarning("Sound not found!");
-        //     }else
-        //     {
-        //         musicSource.clip = s.clip;
-        //         musicSource.Play();
-        //     }
-        // }
-
-        // private void start()
-        // {
-        //     PlayMusic("backgroundMusic");
-        // }
-
-        // public void PlaySFX(string name)
-        // {
-        //     Sound s = Array.Find(sfxSounds, x => x.name == name);
-        //     if (s == null)
-        //     {
-        //         Debug.LogWarning("Sound not found!");
-        //     }else{
-        //         sfxSource.PlayOneShot(s.clip);
-        //     }
-        // }
+    // Methode zum Abspielen von Menü-Musik
+    public void PlayMainMenuMusic(AudioClip musicClip)
+    {
+        // Überprüft, ob bereits ein Clip abgespielt wird
+        if(!musicSource.isPlaying)
+        {
+            musicSource.clip = musicClip;
+            musicSource.Play();
+            Debug.Log("Main Menu Music started");
+        }
+    }
+    // Methode zum Abspielen von In-Game-Musik
+    public void PlayInGameMusic(AudioClip musicClip)
+    {
+        // Überprüft, ob bereits ein Clip abgespielt wird
+        if(!musicSource.isPlaying)
+        {
+            musicSource.clip = musicClip;
+            musicSource.Play();
+            Debug.Log("In-Game Music started");
+        }
+    }
+    // Methode zum Stoppen von Hintergrundmusik
+    public void StopMusic()
+    {
+        musicSource.Stop();
+        Debug.Log("Music stopped");
+    }
+    // Methode zum Abspielen von Soundeffekten
+    public void PlaySFX(AudioClip sfxClip)
+    {
+        sfxSource.PlayOneShot(sfxClip);
+    }
 }
