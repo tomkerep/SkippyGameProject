@@ -7,6 +7,9 @@ public class Nut_new : MonoBehaviour
 {
 
     public int time;
+
+    public GameObject NutText; 
+
     
     private void OnTriggerEnter(Collider other)
     {
@@ -27,6 +30,7 @@ public class Nut_new : MonoBehaviour
             }
         }
     }
+
 
     void wakeup()
     {

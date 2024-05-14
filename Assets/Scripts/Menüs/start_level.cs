@@ -9,9 +9,13 @@ public class start_level : MonoBehaviour
 {
     public AudioClip click;
     private int level;
-    private void Start() {
+
+    public void Start() {
         level = Level_Selection.selectedLevel;
         Debug.Log(level);
+
+
+
     }
 
     public void PlayLevel() {

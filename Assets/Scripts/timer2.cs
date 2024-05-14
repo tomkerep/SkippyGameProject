@@ -45,16 +45,18 @@ public class timer2 : MonoBehaviour
                 GameCheck();
             }
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (timeRemaining > 0 && Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
             {
                 Debug.Log("Resume");
                 Resume();
-            }else{
+            }
+            else
+            {
                 Debug.Log("Pause");
                 Pause();
-            
+
             }
         }
     }
@@ -65,10 +67,20 @@ public class timer2 : MonoBehaviour
         if (bauInventory.StoredNuts < NutsNeeded)
         {
             gameOverScreen.Setup(bauInventory.StoredNuts);
+            if (gameOverScreen == true)
+            {
+                Debug.Log("Game Over");
+                Time.timeScale = 0;
+            }
         }
         else
         {
             gameWonScreen.Setup(bauInventory.StoredNuts);
+            if (gameWonScreen == true)
+            {
+                Debug.Log("Game Won");
+                Time.timeScale = 0;
+            }
         }
     }
 
@@ -101,5 +113,10 @@ public class timer2 : MonoBehaviour
         AudioManager.instance.StopMusic();
         Debug.Log("Music stopped, returning to main menu...");
         SceneManager.LoadScene("Hauptmenü");
+    }
+
+    public float GetRemainingTime()
+    {
+        return timeRemaining;
     }
 }

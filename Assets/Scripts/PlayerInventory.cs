@@ -10,6 +10,7 @@ public class PlayerInventory : MonoBehaviour
     public UnityEvent<PlayerInventory> OnNutCollected; 
     public AudioClip collect_nut;
 
+
     public void NutCollected()
     {
         if(NumberOfNuts >= MaxNumberOfNuts)
