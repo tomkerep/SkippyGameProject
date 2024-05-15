@@ -1440,7 +1440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e14471404d8e4b918639e05dc5e32d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NutText: {fileID: 866452797}
+  NutText: {fileID: 2139029210}
   BauText: {fileID: 1264085283}
   GameWonScreen: {fileID: 1716704562}
   OnNutsStored:
