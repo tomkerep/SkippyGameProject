@@ -24,6 +24,7 @@ public class EnemyMovement : MonoBehaviour
     public UnityEngine.AI.NavMeshAgent agent;
     public Animator animator;
 
+public GameObject exclamationMark;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -32,6 +33,11 @@ public class EnemyMovement : MonoBehaviour
         originalPatrolSpeed = patrolSpeed;
 
         previousPosition = transform.position;
+
+        if (exclamationMark != null)
+        {
+            exclamationMark.SetActive(false); // Ensure the exclamation mark is initially hidden
+        }
 
     }
 
@@ -95,6 +101,11 @@ public class EnemyMovement : MonoBehaviour
         isChasing = true;
       animator.SetBool("isChasing", true);
         chaseTimer = 0f;
+
+         if (exclamationMark != null)
+        {
+            exclamationMark.SetActive(true);
+        }
     }
 
     void EndChase()
@@ -102,6 +113,11 @@ public class EnemyMovement : MonoBehaviour
         isChasing = false;
        animator.SetBool("isChasing", false);
         StartCoroutine(ReturnToPatrol());
+
+        if (exclamationMark != null)
+        {
+            exclamationMark.SetActive(false);
+        }
     }
 
     IEnumerator ReturnToPatrol()

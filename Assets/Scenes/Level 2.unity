@@ -4703,7 +4703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NutText: {fileID: 738544832}
   BauText: {fileID: 1093153501}
-  GameWonScreen: {fileID: 0}
+  GameWonScreen: {fileID: 1787041967}
   OnNutsStored:
     m_PersistentCalls:
       m_Calls:
