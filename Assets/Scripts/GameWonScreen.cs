@@ -48,12 +48,14 @@ public class GameWonScreen : MonoBehaviour
         //Slider zurücksetzen
         FindObjectOfType<GameManager>().ResetSlider(); 
         //nächste Szene laden
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 
     public void ExitButton()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Hauptmenü");
 
     }

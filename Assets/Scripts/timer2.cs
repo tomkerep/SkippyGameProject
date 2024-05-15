@@ -106,6 +106,9 @@ public class timer2 : MonoBehaviour
     }
     public void ReturnToMainMenu()
     {
+        // Reset the time scale to its normal value before loading the main menu scene
+        Time.timeScale = 1;
+
         SceneManager.LoadScene("Hauptmenü");
     }
 
