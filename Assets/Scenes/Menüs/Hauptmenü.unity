@@ -1885,8 +1885,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 10.768}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -233.78745, y: 108.67923}
-  m_SizeDelta: {x: 145.0331, y: 126.9772}
+  m_AnchoredPosition: {x: -278.95154, y: 100.47659}
+  m_SizeDelta: {x: 116.1436, y: 101.6844}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &426015579
 MonoBehaviour:
@@ -2169,8 +2169,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -4.827, y: -5.958, z: 33.389}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -403.25345, y: 101.654274}
-  m_SizeDelta: {x: 153.1394, y: 134.0743}
+  m_AnchoredPosition: {x: -414.66132, y: 94.85094}
+  m_SizeDelta: {x: 122.6353, y: 107.3678}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &559489821
 MonoBehaviour:
@@ -4126,8 +4126,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 14.888}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 115.74167, y: -329.9999}
-  m_SizeDelta: {x: 178.3619, y: 154.1467}
+  m_AnchoredPosition: {x: 80, y: -346}
+  m_SizeDelta: {x: 158.7529, y: 137.1999}
   m_Pivot: {x: 0.440127, y: 0.24276672}
 --- !u!114 &1102918719
 MonoBehaviour:
@@ -5171,7 +5171,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 672, y: 279}
+  m_AnchoredPosition: {x: 706, y: 279}
   m_SizeDelta: {x: 355.1, y: 403.9789}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1224963495
@@ -5660,8 +5660,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -17.732}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -371.26328, y: 82.86105}
-  m_SizeDelta: {x: 151.5169, y: 132.6538}
+  m_AnchoredPosition: {x: -389.0433, y: 79.80116}
+  m_SizeDelta: {x: 121.336, y: 106.2302}
   m_Pivot: {x: 0.0013445148, y: 0.3178815}
 --- !u!114 &1260618692
 MonoBehaviour:
@@ -6082,7 +6082,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 10.642334, z: -532.7661, w: -169.1696}
+  m_margin: {x: 0, y: 10.642334, z: -722.6395, w: -169.1696}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -6496,7 +6496,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Du kannst jedoch nur 4 N\xFCsse gleichzeitig tragen. Goldene N\xFCsse
-    z\xE4hlen doppelt!"
+    z\xE4hlen doppelt, sie sind daf\xFCr aber auch doppelt so schwer!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 527927aa5c5ce4e8485f3f0d6abb1699, type: 2}
   m_sharedMaterial: {fileID: 6857044249063723276, guid: 527927aa5c5ce4e8485f3f0d6abb1699, type: 2}
@@ -7061,7 +7061,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 10.642334, z: -370.87338, w: 1.4644165}
+  m_margin: {x: 0, y: 10.642334, z: -536.40405, w: 1.4644165}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
