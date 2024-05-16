@@ -14,11 +14,13 @@ public class AudioManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-        }
-
+        
         // Initialisiere die AudioSources
         musicSource = gameObject.AddComponent<AudioSource>();
         sfxSource = gameObject.AddComponent<AudioSource>();
+        }else{
+            Destroy(gameObject);
+        }
     }
 
     // Methode zum Abspielen von Menü-Musik

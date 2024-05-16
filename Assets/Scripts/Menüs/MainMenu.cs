@@ -11,7 +11,8 @@ public class MainMenu : MonoBehaviour
     public AudioClip inGameMusic;
     void Start()
     {
-        AudioManager.instance.PlayMainMenuMusic(mainMenuMusic);
+        AudioManager.instance.StopMusic();  // Sicherstellen, dass vorherige Musik gestoppt wird
+        AudioManager.instance.PlayMainMenuMusic(mainMenuMusic);  // Menü-Musik abspielen
     }
     public void PlayGame()
     {
@@ -19,8 +20,10 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         // Soundeffekt abspielen
         AudioManager.instance.PlaySFX(click);
-        AudioManager.instance.StopMusic(); // Main Menu Music stoppen
-        AudioManager.instance.PlayInGameMusic(inGameMusic);
+        // Main Menu Music stoppen
+        AudioManager.instance.StopMusic();
+        // In-Game:Musik abspielen
+        // AudioManager.instance.PlayInGameMusic(inGameMusic);
     }
     public void QuitGame()
     {
