@@ -25,6 +25,8 @@ public class GameOverScreen : MonoBehaviour
 
         slider.value = slider.maxValue;
 
+
+        Time.timeScale = 1;
         // Load the current scene by its name
         SceneManager.LoadScene(currentSceneName);
 
@@ -32,6 +34,7 @@ public class GameOverScreen : MonoBehaviour
 
     public void ExitButton()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Hauptmenü");
 
     }

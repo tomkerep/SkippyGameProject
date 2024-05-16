@@ -26,7 +26,7 @@ public class BauInventoryUI : MonoBehaviour
     {
         timer2 timer = GameManager.GetComponent<timer2>();
 
-        bauText.text = bauInventory.StoredNuts.ToString() + "/" + timer.NutsNeeded.ToString() + " \n Nüsse im Bau";
+        bauText.text = bauInventory.StoredNuts.ToString();
     }
 
     public void UpdateStars(BauInventory bauInventory){

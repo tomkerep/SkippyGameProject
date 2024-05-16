@@ -16,7 +16,9 @@ public class MainMenu : MonoBehaviour
     }
     public void PlayGame()
     {
-        // nächste Szene laden
+        //nächste Szene laden
+        // Reset the time scale to its normal value before loading the next scene
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         // Soundeffekt abspielen
         AudioManager.instance.PlaySFX(click);

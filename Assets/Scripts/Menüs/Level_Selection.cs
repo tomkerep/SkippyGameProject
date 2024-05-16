@@ -13,6 +13,8 @@ public class Level_Selection : MonoBehaviour
 
     public void OpenScene()
     {
+        // Reset the time scale to its normal value before loading the main menu scene
+        Time.timeScale = 1;
         selectedLevel = level;
         SceneManager.LoadScene("Level " + level.ToString());
         // Main Menu Music stoppen
@@ -22,5 +24,5 @@ public class Level_Selection : MonoBehaviour
         // In-Game:Musik abspielen
         AudioManager.instance.PlayInGameMusic(inGameMusic);
     }
-    
+
 }

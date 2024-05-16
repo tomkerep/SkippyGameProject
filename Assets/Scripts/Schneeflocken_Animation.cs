@@ -19,7 +19,7 @@ public class Schneeflocken_Animation : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log("timeRemaining: " + timeRemaining);
+       // Debug.Log("timeRemaining: " + timeRemaining);
         timeRemaining = gameTime.GetRemainingTime();
 
         // Setzen Sie die verbleibende Zeit für die Animation
