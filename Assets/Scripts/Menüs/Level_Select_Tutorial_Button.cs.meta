@@ -5,6 +5,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - click: {fileID: 8300000, guid: 4e7391b4b67724ac0b705d2632dd5c96, type: 3}
+  - mainMenuMusic: {fileID: 8300000, guid: 7de68cb6a940f49b48233daa66a6f540, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

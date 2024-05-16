@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
     public AudioClip inGameMusic;
     void Start()
     {
-        AudioManager.instance.StopMusic();  // Sicherstellen, dass vorherige Musik gestoppt wird
+        //AudioManager.instance.StopMusic();  // Sicherstellen, dass vorherige Musik gestoppt wird
         AudioManager.instance.PlayMainMenuMusic(mainMenuMusic);  // Menü-Musik abspielen
     }
     public void PlayGame()
@@ -25,7 +25,7 @@ public class MainMenu : MonoBehaviour
         // Main Menu Music stoppen
         AudioManager.instance.StopMusic();
         // In-Game:Musik abspielen
-        // AudioManager.instance.PlayInGameMusic(inGameMusic);
+        AudioManager.instance.PlayInGameMusic(inGameMusic);
     }
     public void QuitGame()
     {

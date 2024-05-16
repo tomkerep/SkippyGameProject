@@ -35,7 +35,7 @@ public class BauInventory : MonoBehaviour
                     if (drop_nut != null)
                 {
                     Debug.Log("Playing SFX: drop_nut");
-                    AudioManager.instance.PlaySFX(drop_nut);
+                    AudioManager.instance.PlaySFX(drop_nut, 1.8f);
                 }
                 else
                 {
