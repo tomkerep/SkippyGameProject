@@ -2451,6 +2451,7 @@ PrefabInstance:
     - {fileID: 0}
     - {fileID: 2563432089731279329, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
     - {fileID: 1407130805536979260, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
+    - {fileID: 4163327639077831902, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
     m_RemovedGameObjects:
     - {fileID: 3188536588465848140, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
     - {fileID: 4146056844834594112, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
@@ -8718,7 +8719,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1003885968
 RectTransform:
   m_ObjectHideFlags: 0

@@ -95,14 +95,9 @@ public class timer2 : MonoBehaviour
     public void QuitGame()
     {
         Debug.Log("QUIT!");
-        if (Application.isEditor)
-        {
-            UnityEditor.EditorApplication.isPlaying = false;
-        }
-        else
-        {
+       
             Application.Quit();
-        }
+        
     }
     public void ReturnToMainMenu()
     {
