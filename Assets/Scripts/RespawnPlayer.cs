@@ -9,6 +9,8 @@ public class NewBehaviourScript : MonoBehaviour
     public GameObject NutText;
     public Transform respawnPoint;
     public AudioClip hit_sound;
+    //public GameObject PostProcessingGO;
+    public TakeDamage takeDamage;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,7 +18,6 @@ public class NewBehaviourScript : MonoBehaviour
         {
             PlayerInventory playerInventory = other.gameObject.GetComponent<PlayerInventory>();
             InventoryUI inventory = NutText.GetComponent<InventoryUI>();
-
             Rigidbody playerRigidbody = other.gameObject.GetComponent<Rigidbody>();
 
             if (playerRigidbody != null)
@@ -36,15 +37,13 @@ public class NewBehaviourScript : MonoBehaviour
                 playerRigidbody.velocity = Vector3.zero;
                 playerRigidbody.angularVelocity = Vector3.zero;
 
-                // Debugging lines
-                Debug.Log("Player respawn position set to: " + respawnPoint.position);
-                Debug.Log("Player current position: " + playerRigidbody.position);
             }
             else
             {
                 Debug.LogWarning("Player does not have a Rigidbody component.");
             }
 
+         StartCoroutine(takeDamage.TakeDamageEffect());
             playerInventory.NumberOfNuts = 0;
             //Player.transform.position = respawnPoint.position;
             // Soundeffekt abspielen

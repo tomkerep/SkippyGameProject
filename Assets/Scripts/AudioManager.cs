@@ -56,4 +56,9 @@ public class AudioManager : MonoBehaviour
     {
         sfxSource.PlayOneShot(sfxClip);
     }
+    // Methode zum Abspielen von Soundeffekten mit angegebener Lautstärke
+    public void PlaySFX(AudioClip sfxClip, float volume)
+    {
+        sfxSource.PlayOneShot(sfxClip, volume);
+    }
 }

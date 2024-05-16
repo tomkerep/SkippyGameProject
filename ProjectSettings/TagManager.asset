@@ -13,11 +13,12 @@ TagManager:
   - ClosedDoor
   - OpenDoor
   - BauText
+  - PostProcessingGo
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Post Processing
   - Water
   - UI
   - 
