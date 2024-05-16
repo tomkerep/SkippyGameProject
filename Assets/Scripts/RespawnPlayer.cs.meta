@@ -3,7 +3,11 @@ guid: 17314e27a85fa421cb93dd9389fead60
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Player: {instanceID: 0}
+  - NutText: {instanceID: 0}
+  - respawnPoint: {instanceID: 0}
+  - hit_sound: {fileID: 8300000, guid: 415a65eba889f4137b229026f1848213, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

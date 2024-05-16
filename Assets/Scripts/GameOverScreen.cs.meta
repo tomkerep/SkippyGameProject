@@ -3,7 +3,10 @@ guid: 1e34fae067cf842d2adc628dc4237713
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - pointsText: {instanceID: 0}
+  - slider: {instanceID: 0}
+  - lose_sound: {fileID: 8300000, guid: 0aee1a1841971433882bf44615cde781, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

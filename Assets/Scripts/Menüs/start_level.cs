@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class start_level : MonoBehaviour
 {
-
+    public AudioClip click;
     private int level;
 
     public void Start() {
@@ -20,5 +20,7 @@ public class start_level : MonoBehaviour
 
     public void PlayLevel() {
         SceneManager.LoadScene("Level " + level.ToString());
+        // Soundeffekt abspielen
+            AudioManager.instance.PlaySFX(click);
     }
 }

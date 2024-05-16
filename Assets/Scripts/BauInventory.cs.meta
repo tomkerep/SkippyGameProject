@@ -3,7 +3,11 @@ guid: 0e14471404d8e4b918639e05dc5e32d3
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - NutText: {instanceID: 0}
+  - BauText: {instanceID: 0}
+  - GameWonScreen: {instanceID: 0}
+  - drop_nut: {fileID: 8300000, guid: 843fc0aed8ddd44ea92b4e31a2dea8be, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

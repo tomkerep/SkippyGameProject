@@ -3,7 +3,12 @@ guid: 5d749912c749149519a35952ec2db447
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - gameOverScreen: {instanceID: 0}
+  - gameWonScreen: {instanceID: 0}
+  - Bau: {instanceID: 0}
+  - PausePanel: {instanceID: 0}
+  - inGameMusic: {fileID: 8300000, guid: f22aadaa1b92b444c872c4b6740adde1, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
