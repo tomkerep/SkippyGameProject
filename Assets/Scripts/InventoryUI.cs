@@ -40,7 +40,17 @@ public class InventoryUI : MonoBehaviour
             return;
         }
 
-        nutText.text = playerInventory.NumberOfNuts.ToString() + "/" + playerInventory.MaxNumberOfNuts.ToString();
+        if(playerInventory.NumberOfNuts == playerInventory.MaxNumberOfNuts)
+        {
+            nutText.color = Color.yellow;
+            nutText.text = playerInventory.NumberOfNuts.ToString() + "/" + playerInventory.MaxNumberOfNuts.ToString();
+        }
+        else
+        {
+            nutText.text = playerInventory.NumberOfNuts.ToString() + "/" + playerInventory.MaxNumberOfNuts.ToString();
+            nutText.color = Color.white;
+        }
+        
     }
 }
 
