@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float MoveSpeed = 5f;
+    public float MoveSpeed = 6f;
     public Transform bau;
     private Inventory playerInventory;
     public Animator animator;
