@@ -473,6 +473,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  collect_nut: {fileID: 0}
 --- !u!65 &747556978690946578
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -493,7 +494,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 0.93584293, z: 0.7411076}
-  m_Center: {x: 0, y: -0.03207908, z: 0.12944728}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &1407130805536979260
 SphereCollider:
   m_ObjectHideFlags: 0
