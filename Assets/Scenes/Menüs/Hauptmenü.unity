@@ -2109,7 +2109,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &577421647
 Transform:
   m_ObjectHideFlags: 0
@@ -5301,6 +5301,7 @@ MonoBehaviour:
   NutText: {fileID: 0}
   respawnPoint: {fileID: 0}
   hit_sound: {fileID: 8300000, guid: 415a65eba889f4137b229026f1848213, type: 3}
+  takeDamage: {fileID: 0}
 --- !u!114 &1236763791
 MonoBehaviour:
   m_ObjectHideFlags: 0
