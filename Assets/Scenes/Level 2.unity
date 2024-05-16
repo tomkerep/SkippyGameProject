@@ -370,7 +370,7 @@ PrefabInstance:
     - target: {fileID: 9171868556171590948, guid: 5e8d2a2ac2191426a8a0b6f9a34cf289, type: 3}
       propertyPath: NutText
       value: 
-      objectReference: {fileID: 348944340}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -904,7 +904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 740244865}
-  NutText: {fileID: 348944340}
+  NutText: {fileID: 0}
   respawnPoint: {fileID: 499666160}
   hit_sound: {fileID: 8300000, guid: 415a65eba889f4137b229026f1848213, type: 3}
 --- !u!195 &77847632
@@ -1509,6 +1509,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &127190060 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3188536588465848140, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
+  m_PrefabInstance: {fileID: 740244864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &127190062 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4294385749121230896, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
+  m_PrefabInstance: {fileID: 740244864}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127190060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cded6cb20814046b1bdea37e39eb6a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &142753377
 GameObject:
   m_ObjectHideFlags: 0
@@ -1705,7 +1721,7 @@ PrefabInstance:
     - target: {fileID: 9171868556171590948, guid: 5e8d2a2ac2191426a8a0b6f9a34cf289, type: 3}
       propertyPath: NutText
       value: 
-      objectReference: {fileID: 348944340}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4485,7 +4501,7 @@ PrefabInstance:
     - target: {fileID: 9171868556171590948, guid: 5e8d2a2ac2191426a8a0b6f9a34cf289, type: 3}
       propertyPath: NutText
       value: 
-      objectReference: {fileID: 348944340}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4836,7 +4852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e14471404d8e4b918639e05dc5e32d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NutText: {fileID: 348944340}
+  NutText: {fileID: 127190060}
   BauText: {fileID: 1093153501}
   GameWonScreen: {fileID: 1787041967}
   OnNutsStored:
@@ -7316,7 +7332,7 @@ PrefabInstance:
     - target: {fileID: 4163327639077831902, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
       propertyPath: OnNutCollected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 348944341}
+      objectReference: {fileID: 0}
     - target: {fileID: 8078750219784172525, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
       propertyPath: m_Name
       value: Player
@@ -7331,9 +7347,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1407130805536979260, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
+    - {fileID: 4163327639077831902, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8078750219784172525, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 740244866}
+    - targetCorrespondingSourceObject: {fileID: 8078750219784172525, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 740244867}
     - targetCorrespondingSourceObject: {fileID: 3188536588465848140, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -7359,7 +7382,7 @@ MonoBehaviour:
   OnNutCollected:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 738544833}
+      - m_Target: {fileID: 127190062}
         m_TargetAssemblyTypeName: InventoryUI, Assembly-CSharp
         m_MethodName: UpdateNutText
         m_Mode: 0
@@ -7394,11 +7417,6 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!4 &740244873 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1358380952529551758, guid: 184a5e729f7bb4802aba9d36b4a1ff48, type: 3}
-  m_PrefabInstance: {fileID: 740244864}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &751506921
 GameObject:
   m_ObjectHideFlags: 0
@@ -8824,7 +8842,7 @@ PrefabInstance:
     - target: {fileID: 9171868556171590948, guid: 5e8d2a2ac2191426a8a0b6f9a34cf289, type: 3}
       propertyPath: NutText
       value: 
-      objectReference: {fileID: 348944340}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9166,7 +9184,7 @@ PrefabInstance:
     - target: {fileID: 9171868556171590948, guid: 5e8d2a2ac2191426a8a0b6f9a34cf289, type: 3}
       propertyPath: NutText
       value: 
-      objectReference: {fileID: 348944340}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10787,7 +10805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 740244865}
-  NutText: {fileID: 348944340}
+  NutText: {fileID: 0}
   respawnPoint: {fileID: 499666160}
   hit_sound: {fileID: 8300000, guid: 415a65eba889f4137b229026f1848213, type: 3}
 --- !u!195 &1164596072
@@ -12066,7 +12084,7 @@ PrefabInstance:
     - target: {fileID: 9171868556171590948, guid: 5e8d2a2ac2191426a8a0b6f9a34cf289, type: 3}
       propertyPath: NutText
       value: 
-      objectReference: {fileID: 348944340}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13034,7 +13052,7 @@ PrefabInstance:
     - target: {fileID: 9171868556171590948, guid: 5e8d2a2ac2191426a8a0b6f9a34cf289, type: 3}
       propertyPath: NutText
       value: 
-      objectReference: {fileID: 348944340}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13370,7 +13388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 740244865}
-  NutText: {fileID: 348944340}
+  NutText: {fileID: 0}
   respawnPoint: {fileID: 499666160}
   hit_sound: {fileID: 8300000, guid: 415a65eba889f4137b229026f1848213, type: 3}
 --- !u!195 &1371187626
@@ -14050,7 +14068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 740244865}
-  NutText: {fileID: 348944340}
+  NutText: {fileID: 0}
   respawnPoint: {fileID: 499666160}
   hit_sound: {fileID: 8300000, guid: 415a65eba889f4137b229026f1848213, type: 3}
 --- !u!195 &1453861807
@@ -16932,7 +16950,7 @@ PrefabInstance:
     - target: {fileID: 9171868556171590948, guid: 5e8d2a2ac2191426a8a0b6f9a34cf289, type: 3}
       propertyPath: NutText
       value: 
-      objectReference: {fileID: 348944340}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17533,7 +17551,7 @@ PrefabInstance:
     - target: {fileID: 9171868556171590948, guid: 5e8d2a2ac2191426a8a0b6f9a34cf289, type: 3}
       propertyPath: NutText
       value: 
-      objectReference: {fileID: 348944340}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19121,7 +19139,7 @@ PrefabInstance:
     - target: {fileID: 9171868556171590948, guid: 5e8d2a2ac2191426a8a0b6f9a34cf289, type: 3}
       propertyPath: NutText
       value: 
-      objectReference: {fileID: 348944340}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19445,7 +19463,7 @@ PrefabInstance:
     - target: {fileID: 9171868556171590948, guid: 5e8d2a2ac2191426a8a0b6f9a34cf289, type: 3}
       propertyPath: NutText
       value: 
-      objectReference: {fileID: 348944340}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
