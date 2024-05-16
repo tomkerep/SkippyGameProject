@@ -3,7 +3,14 @@ guid: 0d5149504402f40b2aa6f1965e790515
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - pointsText: {instanceID: 0}
+  - GameManager: {instanceID: 0}
+  - Bau: {instanceID: 0}
+  - star1: {instanceID: 0}
+  - star2: {instanceID: 0}
+  - star3: {instanceID: 0}
+  - win_sound: {fileID: 8300000, guid: 4d417c9e8c38546ecae5b7bfb8167c63, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

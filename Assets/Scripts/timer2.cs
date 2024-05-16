@@ -7,20 +7,24 @@ public class timer2 : MonoBehaviour
 {
     public float timeRemaining = 0;
     public bool timerIsRunning = false;
-
     public int NutsNeeded;
     public int NutsNeededStar2;
     public int NutsNeededStar3;
-
     public GameOverScreen gameOverScreen;
-
     public GameWonScreen gameWonScreen;
     public GameObject Bau;
     public GameObject PausePanel;
     private bool isPaused = false;
+    private AudioManager audioManager;
+    public AudioClip inGameMusic;
     private void Start()
     {
-
+        audioManager = FindObjectOfType<AudioManager>();
+        if (audioManager == null)
+        {
+            Debug.LogError("AudioManager not found!");
+        }
+        AudioManager.instance.PlayInGameMusic(inGameMusic);
     }
 
     void Update()
@@ -103,7 +107,8 @@ public class timer2 : MonoBehaviour
     {
         // Reset the time scale to its normal value before loading the main menu scene
         Time.timeScale = 1;
-
+        AudioManager.instance.StopMusic();
+        Debug.Log("Music stopped, returning to main menu...");
         SceneManager.LoadScene("Hauptmenü");
     }
 

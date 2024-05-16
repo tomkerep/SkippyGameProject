@@ -13,10 +13,13 @@ public class GameWonScreen : MonoBehaviour
     public GameObject star1;
     public GameObject star2;
     public GameObject star3;
+    public AudioClip win_sound;
 
     public void Setup(int score)
     {
         gameObject.SetActive(true);
+        // Soundeffekt abspielen
+            AudioManager.instance.PlaySFX(win_sound);
         pointsText.text = score.ToString() + " Nüsse gesammelt";
         star1.SetActive(false);
         star2.SetActive(false);

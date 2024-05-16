@@ -17,9 +17,15 @@ public class GoldenNut : MonoBehaviour
                 return;
             }else
             {
-                playerInventory.NutCollected();
-                playerInventory.NutCollected();
-                gameObject.SetActive(false);
+                if(playerInventory.NumberOfNuts == 3)
+                {
+                    Debug.LogWarning("Nuss kann nicht aufgenommen werden, da das Inventar voll ist.");
+                }else{
+                    playerInventory.NutCollected();
+                    playerInventory.NutCollected();
+                    gameObject.SetActive(false);
+                }
+                
             }
         }
     }

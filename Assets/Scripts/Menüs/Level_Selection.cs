@@ -8,6 +8,8 @@ public class Level_Selection : MonoBehaviour
 
     public static int selectedLevel;
     public int level;
+    public AudioClip click;
+    public AudioClip inGameMusic;
 
     public void OpenScene()
     {
@@ -15,6 +17,12 @@ public class Level_Selection : MonoBehaviour
         Time.timeScale = 1;
         selectedLevel = level;
         SceneManager.LoadScene("Level " + level.ToString());
+        // Main Menu Music stoppen
+        AudioManager.instance.StopMusic();
+        // Soundeffekt abspielen
+        AudioManager.instance.PlaySFX(click);
+        // In-Game:Musik abspielen
+        AudioManager.instance.PlayInGameMusic(inGameMusic);
     }
 
 }
