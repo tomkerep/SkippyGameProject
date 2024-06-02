@@ -18,7 +18,7 @@ public class BauInventory : MonoBehaviour
             // Überprüfe, ob der AudioClip im Inspector zugewiesen wurde
             if (drop_nut == null)
             {
-                Debug.LogError("drop_nut AudioClip ist nicht zugewiesen!");
+                //Debug.LogError("drop_nut AudioClip ist nicht zugewiesen!");
             }
         }
     void OnTriggerEnter(Collider other)

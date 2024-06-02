@@ -9,8 +9,15 @@ public class StartScreen : MonoBehaviour
 
  public GameManager gameManager; // Reference to your GameManager script
 
+ public void Start()
+ {
+Time.timeScale = 0;
+ }
+
     public void StartButtonClicked()
     {
+
+        Time.timeScale = 1;
         // Deactivate the start screen
         startScreen.SetActive(false);
 
